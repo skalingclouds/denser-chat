@@ -1,0 +1,35 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "denser-chat"
+version = "0.1.0"
+description = "Chat with webpages, pdfs and others."
+authors = ["denser-org <support@denser.ai>"]
+license = "MIT"
+packages = [
+    { include = "denser_chat" }  # Must match directory name
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.11.0"
+pypdf = "^4.2.0"
+langchain-core = "^0.2.10"
+langchain-text-splitters = "^0.2.2"
+PyMuPDF = "^1.23.0"
+denser-retriever = { git = "https://github.com/denser-org/denser-retriever.git", branch = "easy_install" }
+streamlit = "^1.39.0"
+anthropic = "^0.38.0"
+openai = "^1.54.1"
+
+[tool.poetry.scripts]
+
+[tool.poetry.group.dev.dependencies]
+notebook = "^7.2.1"
+black = "^24.4.2"
+ruff = "^0.5.5"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.2"
